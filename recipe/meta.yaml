@@ -19,7 +19,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [not win or py < 36]
+  skip: true  # [not win]
 
 
 requirements:
