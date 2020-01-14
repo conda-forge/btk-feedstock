@@ -1,6 +1,6 @@
 setlocal EnableDelayedExpansion
 
-IF %PY3K%=1 (
+IF %PY3K%==1 (
       copy "%RECIPE_DIR%\0001-Python-3-support.patch" "0001-Python-3-support.patch"
       git apply  --whitespace=fix --ignore-whitespace --reject 0001-Python-3-support.patch
 )
