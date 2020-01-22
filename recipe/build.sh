@@ -1,17 +1,12 @@
 #!/bin/bash
 
-cp "${RECIPE_DIR}/0001-Python-3-support.patch" "0001-Python-3-support.patch"
-
-git apply  --whitespace=fix --ignore-whitespace --reject 0001-Python-3-support.patch
-
-
 # Make a build folder and change to it.
 mkdir build
 cd build
 
 
 # Configure using the CMakeFiles
-cmake -LAH -G "Ninja"  \
+cmake -G "Ninja"  \
       -DBTK_WRAP_PYTHON:BOOL=1 \
       -DCMAKE_INSTALL_PREFIX:FILEPATH="${LIBRARY_PREFIX}" \
       -DCMAKE_PREFIX_PATH:PATH="${LIBRARY_PREFIX}" \
