@@ -33,5 +33,5 @@ nmake install
 
 # Collect bin/_btk.pyd and bin/btk.py move it to site_packages
 cp "bin/btk.py" "${SP_DIR}/btk.py"
-cpp "bin/_btk.so" "${SP_DIR}/_btk.so"
+cpp "bin/_btk${SHLIB_EXT}" "${SP_DIR}/_btk${SHLIB_EXT}"
 
