@@ -17,6 +17,8 @@ cmake -LAH -G "Ninja"  \
       -DCMAKE_PREFIX_PATH:PATH="${LIBRARY_PREFIX}" \
       -DPYTHON_LIBRARY="${PREFIX}/lib/libpython${PY_VER}m${SHLIB_EXT}" \
       -DPYTHON_INCLUDE_DIR="${PREFIX}/include/python${PY_VER}m" \
+      -DNUMPY_INCLUDE_DIR="${SP_DIR}/numpy/core/include" \
+      -DNUMPY_VERSION="${NPY_VER}" \
       -DCMAKE_PREFIX_PATH:PATH="${PREFIX}" \
       -DBUILD_DOCUMENTATION:BOOL=0 \
       -DCMAKE_BUILD_TYPE:STRING=Release \
