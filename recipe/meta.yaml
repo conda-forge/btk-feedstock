@@ -38,6 +38,9 @@ test:
     - Testing/Python
   imports:
     - btk
+  requires:
+    - git  # [not win]
+  
 
 about:
   home: https://github.com/Biomechanical-ToolKit/BTKCore
