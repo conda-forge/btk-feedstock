@@ -32,7 +32,7 @@ for fn in os.listdir("BTKData/Input"):
     os.makedirs(Path("output") / fn, exist_ok=True)
 
 
-sys.path.append('testing/python') # All of the unit tests
+sys.path.append('Testing/Python') # All of the unit tests
 sys.path.append('.') # _TDDConfigure.py
 
 import _TDDCommon
