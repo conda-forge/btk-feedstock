@@ -30,6 +30,16 @@ ninja install
 # RMDIR /Q/S "%LIBRARY_PREFIX%\share\btk-0.4dev"
 
 # Collect bin/_btk.pyd and bin/btk.py move it to site_packages
-cp "bin/btk.py" "${SP_DIR}/btk.py"
-cp "bin/_btk${SHLIB_EXT}" "${SP_DIR}/_btk${SHLIB_EXT}"
-cp bin/libBTK* ${PREFIX}/lib
+mkdir ${SP_DIR}/btk
+cp "bin/btk.py" "${SP_DIR}/btk/__init__.py"
+cp bin/_btk* "${SP_DIR}/btk"
+
+if test -f "bin/libBTKBasicFilters.so"; then
+    cp bin/libBTKBasicFilters* "${SP_DIR}/btk"
+fi
+if test -f "bin/libBTKCommon.so"; then
+    cp bin/libBTKCommon* "${SP_DIR}/btk"
+fi
+if test -f "bin/libBTKIO.so"; then
+    cp bin/libBTKIO* "${SP_DIR}/btk"
+fi
