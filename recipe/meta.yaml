@@ -18,7 +18,7 @@ source:
 
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not win or py < 36]
 
 
