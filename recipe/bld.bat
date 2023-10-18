@@ -1,8 +1,10 @@
 setlocal EnableDelayedExpansion
 
 copy "%RECIPE_DIR%\0001-Python-3-support.patch" "0001-Python-3-support.patch"
+copy "%RECIPE_DIR%\0002-fix-longlong.patch" "0002-fix-longlong.patch"
 
 git apply  --whitespace=fix --ignore-whitespace --reject 0001-Python-3-support.patch
+git apply  --whitespace=fix --ignore-whitespace --reject 0002-fix-longlong.patch
 
 
 :: Make a build folder and change to it.
