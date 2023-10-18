@@ -1,0 +1,34 @@
+From 6d44125097fd67aa6c93ed66eca360bdf01c3411 Mon Sep 17 00:00:00 2001
+From: Morten Enemark Lund <mel@anybodytech.com>
+Date: Wed, 18 Oct 2023 13:30:05 +0200
+Subject: [PATCH] fix longlong
+
+---
+ Code/Common/btkObject.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/Code/Common/btkObject.cpp b/Code/Common/btkObject.cpp
+index 7fd98c25..46fd7dd4 100644
+--- a/Code/Common/btkObject.cpp
++++ b/Code/Common/btkObject.cpp
+@@ -35,6 +35,7 @@
+ 
+ #include "btkObject.h"
+ #include "btkCriticalSection_p.h"
++#include <winnt.h>
+ 
+ // OSAtomic.h optimizations only used in 10.5 and later
+ #if defined(__APPLE__)
+@@ -82,7 +83,7 @@ namespace btk
+ #if defined(WIN32) || defined(_WIN32)
+     // Windows optimization
+   #if defined(HAVE_64_BIT) 
+-    static LONGLONG _atomic_time = 0;
++    static LONG64 _atomic_time = 0;
+     this->m_Timestamp = (unsigned long)InterlockedIncrement64(&_atomic_time);
+   #else
+     static LONG _atomic_time = 0;
+-- 
+2.42.0.vfs.0.3
+
+
