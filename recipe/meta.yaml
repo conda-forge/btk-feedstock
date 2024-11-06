@@ -18,7 +18,7 @@ source:
 
 
 build:
-  number: 5
+  number: 6
   skip: true  # [not win or py < 36]
 
 
@@ -27,6 +27,7 @@ requirements:
     - cmake
     - jom  # [win]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -35,7 +36,6 @@ requirements:
     - pip
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   source_files:
